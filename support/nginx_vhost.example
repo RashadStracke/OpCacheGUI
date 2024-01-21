@@ -1,4 +1,4 @@
-server {
+server!{
     listen      80;
     server_name opcachegui.example.com;
     root        /var/www/OpCacheGUI/public;
@@ -8,8 +8,9 @@ server {
 
     try_files $uri $uri/ /index.php;
 
-    location ~* \.php$ {
+    location ~  \.php$ {
         include fastcgi_params;
         fastcgi_pass /var/run/php5-fpm.sock;
     }
 }
+ 
